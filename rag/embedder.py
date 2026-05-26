@@ -9,8 +9,8 @@ def get_model():
     return _model
 
 def embed(texts: list[str]) -> list[list[float]]:
-    get_model()
+    model = get_model()
     
-    encoded = _model.encode(texts, show_progress_bar=True)
+    encoded = model.encode(texts, show_progress_bar=True).to_list()
     
     return encoded
